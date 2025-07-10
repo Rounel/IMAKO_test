@@ -1,6 +1,7 @@
 "use client"
 
-import { Bell, Search, Sun, Moon, Menu, Link, Settings } from "lucide-react"
+import { Link } from "react-router-dom"
+import { Bell, Search, Sun, Moon, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -101,9 +102,8 @@ export function Header({ onOpenSidebar }: { onOpenSidebar?: () => void }) {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem>
-                <Link to="/settings">
-                  <Settings className="mr-2 h-4 w-4" />
+              <DropdownMenuItem asChild>
+                <Link to="/settings" className="text-black">
                   Profile Settings
                 </Link>
               </DropdownMenuItem>

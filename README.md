@@ -1,69 +1,169 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# IMAKO Test
 
-Currently, two official plugins are available:
+**IMAKO Test** est une application web complète de **gestion de projets d'équipe**, inspirée de Trello/Asana (version simplifiée).  
+Elle permet à une équipe de gérer des projets de manière collaborative : inscription, authentification, dashboard personnalisé, création/gestion de projets, assignation de membres, suivi de l’avancement et gestion des priorités.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Fonctionnalités
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+✅ Inscription et connexion sécurisées  
+✅ Tableau de bord personnalisé avec statistiques dynamiques  
+✅ Création, modification, suppression de projets (CRUD)  
+✅ Assignation de membres d'équipe aux projets  
+✅ Suivi de l’avancement et priorités  
+✅ Design moderne et responsive (mobile, tablette, desktop)  
+✅ Notifications (toasts) et états de chargement  
+✅ Mock Data pour simuler API et authentification
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Stack Technique
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Frontend** : React.js + Vite
+- **Navigation** : React Router v6 (routes publiques/privées)  
+- **UI** : Tailwind CSS + UI Library (Shadcn/ui)  
+- **Données** : Mock Data  
+- **Graphiques** : CRecharts
+- **Gestion d'état** : Context API et local
+
+---
+
+## Prérequis
+
+- Node.js ≥ 18.x
+- npm ≥ 8.x
+- Git
+
+---
+
+## Installation
+
+```bash
+# 1. Cloner le repository
+git clone https://github.com/<your-username>/imako-test.git
+
+# 2. Accéder au dossier
+cd imako-test
+
+# 3. Installer les dépendances
+pnpm install
+
+# 4. Lancer le serveur de développement
+pnpm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Structure des Mock Data
 
-export default tseslint.config([
-  globalIgnores(['dist']),
+```javascript
+// mockData.js (exemple)
+
+export const projects = [
   {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+    id: 1,
+    name: "Site e-commerce ModernShop",
+    description: "Développement d'une boutique en ligne moderne",
+    status: "active",
+    priority: "high",
+    startDate: "2024-01-15",
+    endDate: "2024-03-15",
+    assignedUsers: [1, 2],
+    progress: 75,
+    createdBy: 1,
+    technologies: ["React", "Node.js"]
+  }
+  // ... 19 autres projets
+];
+
+export const users = [
+  {
+    id: 1,
+    firstName: "Alice",
+    lastName: "Martin",
+    email: "alice.martin@company.com",
+    password: "password123",
+    avatar: "https://i.pravatar.cc/150?img=1",
+    role: "Frontend Developer",
+    isActive: true
+  }
+  // ... 11 autres utilisateurs
+];
 ```
+
+- Les opérations CRUD et l’authentification utilisent `useState` ou `useContext`.
+
+---
+
+## Scénarios d'utilisation
+
+- **Inscription** : `/register`  
+- **Connexion** : `/login`  
+- **Dashboard** : `/dashboard`  
+- **CRUD Projet** : création, édition, suppression via formulaires modaux  
+- **Assignation Membres** : ajout/retrait d’utilisateurs à un projet  
+- **Suivi Statistiques** : graphiques dynamiques sur le dashboard
+
+---
+
+## Captures d’écran
+
+- ![Page d’inscription](./screenshots/register.png)
+- ![Page de connexion](./screenshots/login.png)
+- ![Dashboard](./screenshots/dashboard.png)
+- ![Dashboard 2](./screenshots/dashboard2.png)
+- ![Liste projets](./screenshots/projects-list.png)
+- ![Détail projet](./screenshots/project-detail.png)
+- ![Equipe](./screenshots/teams.png)
+- ![Profil](./screenshots/user-profile.png)
+
+---
+
+## Commandes principales
+
+```bash
+# Lancer le projet en dev
+pnpm run dev
+
+# Build de production
+pnpm run build
+
+# Preview du build
+pnpm run preview
+```
+
+---
+
+## Contribution
+
+Merci de respecter ces règles pour contribuer :
+
+- **Branches** : `feature/<feature-name>`, `fix/<bug-name>`  
+- **Commits** : format conventionnel `type(scope): description`  
+- **Pull Requests** : détailler les changements apportés  
+- Toujours garder le code commenté, propre et testé
+
+---
+
+## License
+
+Ce projet est sous licence **MIT**.  
+Feel free to fork, modify and share!
+
+---
+
+## Déploiement
+
+Le projet peut être déployé sur **Vercel**, **Netlify** ou **GitHub Pages**.
+
+```bash
+# Déployer sur Vercel
+pnpm dlx vercel deploy
+```
+
+---
+
+
+**Bonne chance et bon code ! 🚀**

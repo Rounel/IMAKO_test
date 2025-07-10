@@ -171,3 +171,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+button, a {
+  cursor: pointer;
+}
