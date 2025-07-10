@@ -1,0 +1,84 @@
+# Dependency directories
+node_modules/
+.pnpm/
+
+# Build output
+/dist/
+/build/
+/.next/
+/.turbo/
+
+# Vite cache
+/.vite/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.code-workspace
+
+# TypeScript
+*.tsbuildinfo
+
+# Test coverage
+/coverage/
+
+# Env files
+.env*
+!.env.example
+
+# Misc
+*.local
+*.log
+*.pid
+*.seed
+*.tgz
+
+# Sonner/Toaster
+.toaster/
+
+# shadcn/ui
+components.json
+
+# Radix UI
+.radix/
+
+# Tailwind
+.tailwind*
+
+# Mac system files
+.AppleDouble
+.LSOverride
+
+# Windows system files
+$RECYCLE.BIN/
+
+# npm package distribution
+*.tgz
+
+# lockfiles (keep only pnpm)
+package-lock.json
+yarn.lock
+
+# Optional: ignore generated assets
+/public/vite.svg
+
+# End of file
