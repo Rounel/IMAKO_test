@@ -115,7 +115,7 @@ export const users = [
 - ![Dashboard](./screenshots/dashboard1.jpeg)
 - ![Dashboard 2](./screenshots/dashboard2.png)
 - ![Liste projets](./screenshots/projects-list.jpeg)
-- ![Détail projet](./screenshots/project-detail.png)
+- ![Détail projet](./screenshots/project-details.png)
 - ![Equipe](./screenshots/teams.jpeg)
 - ![Profil](./screenshots/user-profile.jpeg)
 
