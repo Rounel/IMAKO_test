@@ -112,12 +112,12 @@ export const users = [
 
 - ![Page d’inscription](./screenshots/register.png)
 - ![Page de connexion](./screenshots/login.png)
-- ![Dashboard](./screenshots/dashboard.png)
+- ![Dashboard](./screenshots/dashboard1.jpeg)
 - ![Dashboard 2](./screenshots/dashboard2.png)
-- ![Liste projets](./screenshots/projects-list.png)
+- ![Liste projets](./screenshots/projects-list.jpeg)
 - ![Détail projet](./screenshots/project-detail.png)
-- ![Equipe](./screenshots/teams.png)
-- ![Profil](./screenshots/user-profile.png)
+- ![Equipe](./screenshots/teams.jpeg)
+- ![Profil](./screenshots/user-profile.jpeg)
 
 ---
 
