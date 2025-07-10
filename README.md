@@ -166,4 +166,4 @@ pnpm dlx vercel deploy
 ---
 
 
-**Bonne chance et bon code ! 🚀**
+**Bonne chance et bon code !**
